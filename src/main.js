@@ -3,8 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-var draggable = require('vuedraggable')
+import jQuery from 'jquery'
+import Tether from 'tether'
+import 'bootstrap/dist/css/bootstrap.min.css'
+global.jQuery = jQuery
+global.Tether = Tether
+var Bootstrap = require('bootstrap')
+var draggable = require('vuedraggable');
 
+//setup lodash
+window._ = require('lodash');
 
 Vue.config.productionTip = false
 

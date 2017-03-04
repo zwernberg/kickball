@@ -1,13 +1,13 @@
 <template>
 <ul id="repeat-object" class="demo">
-    <input class="new-player"
-      autofocus autocomplete="off"
-      placeholder="Add Player"
-      v-model="newPlayer"
-      @keyup.enter="addPlayer">
+    <div class='row'>
+      <b-form-input v-model="newPlayer" type="text" placeholder="Add new player" @keyup.enter="addPlayer"></b-form-input>
+      </div>
       <draggable :list=players @end="onEnd">
-  <ul v-for="player in players">
+    <ul class="list-group" v-for="player in players">
+    <li class="list-group-item">
     {{ player.name }} {{ player.position}}
+    </li>
   </ul>
       </draggable>
 </ul>
@@ -25,7 +25,7 @@ export default  {
     data: function () {
         return {
             greeting: 'hello',
-            players: playerStore.fetch(),
+            players: playerStore.getPlayers(),
             newPlayer: ''
         }
     },
@@ -45,3 +45,12 @@ export default  {
 }
 
 </script>
+
+<style>
+.list-group-item {
+    padding-top:4px !important; 
+    padding-bottom:0 !important;
+    height: 75px;
+}
+
+</style>

@@ -3,17 +3,17 @@ export default {
     players: [],
 
     getPlayers: function () {
-        return this.players || this.fetch();
+        return _.isEmpty(this.players) ? this.fetch() : this.players;
     },
 
     fetch: function fetch() {
-        var players = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        this.players = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
         //var players = [];
-        players.forEach(function (player, index) {
+        this.players.forEach(function (player, index) {
             player.id = index
         })
-        this.uid = players.length;
-        return players;
+        this.uid = this.players.length;
+        return this.players;
     },
 
     add: function add(player) {
