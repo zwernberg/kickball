@@ -21,6 +21,11 @@ export default {
         this.save(this.players);
     },
 
+    remove: function remove(player) {
+        this.players.splice(this.players.indexOf(player), 1);
+        this.save(this.players);
+    },
+
     save: function save(players) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(players))
     }

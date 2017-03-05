@@ -6,6 +6,7 @@ import router from './router'
 import jQuery from 'jquery'
 import Tether from 'tether'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'vue-awesome/icons'
 global.jQuery = jQuery
 global.Tether = Tether
 var Bootstrap = require('bootstrap')
@@ -15,6 +16,10 @@ var draggable = require('vuedraggable');
 window._ = require('lodash');
 
 Vue.config.productionTip = false
+
+//vue-awesome
+import Icon from 'vue-awesome/components/Icon.vue'
+Vue.component('icon', Icon)
 
 /* eslint-disable no-new */
 new Vue({
