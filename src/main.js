@@ -6,7 +6,7 @@ import router from './router'
 import jQuery from 'jquery'
 import Tether from 'tether'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'vue-awesome/icons'
+import 'vue-awesome/icons/trash-o'
 global.jQuery = jQuery
 global.Tether = Tether
 var Bootstrap = require('bootstrap')
