@@ -16,8 +16,8 @@ export default {
         return this.players;
     },
 
-    add: function add(player) {
-        this.players.push({name: player, id: this.uid++});
+    add: function add(player, _position) {
+        this.players.push({name: player, position: _position, id: this.uid++});
         this.save(this.players);
     },
 
@@ -28,5 +28,12 @@ export default {
 
     save: function save(players) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(players))
+    },
+
+    updatePlayer: function updatePlayer(player){
+        var match = _.find(this.players, function(o) { return o.id === player.id});
+        match.position = player.position;
+
+        this.save(this.players);
     }
 };

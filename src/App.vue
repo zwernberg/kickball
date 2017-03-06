@@ -22,9 +22,12 @@ export default {
   margin-top: 60px;
 }
 .list-group-item {
-    padding-top:4px !important; 
-    padding-bottom:0 !important;
+    padding-bottom:10px !important;
     height: 75px;
+}
+
+.row {
+  padding-bottom: 50px
 }
 
 </style>
